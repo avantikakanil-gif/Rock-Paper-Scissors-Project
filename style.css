@@ -1,0 +1,24 @@
+body {
+    text-align: center;
+    display: flex;
+    font-family: "Trebuchet MS";
+    flex-direction: column;
+}
+
+.human-score {
+    display: none;
+}
+
+.computer-score {
+    display: none;
+}
+
+.win {
+    color: green;
+    display: none;
+}
+
+.lose {
+    color: red;
+    display: none;
+}

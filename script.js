@@ -1,6 +1,15 @@
 let numberChoice;
 let humanScore = 0;
 let computerScore = 0;
+let humanScoreDisplay = document.querySelector(".human-score");
+let computerScoreDisplay = document.querySelector(".computer-score");
+let win = document.querySelector(".win");
+let lose  = document.querySelector(".lose");
+
+humanScoreDisplay.style.display = "none";
+computerScoreDisplay.style.display = "none";
+win.style.display = "none";
+lose.style.display = "none";
 
 function getComputerChoice() {
     numberChoice = Math.floor(Math.random() * 3);
@@ -61,10 +70,24 @@ function playGame() {
     console.log("The computer scored " + computerScore + ".")
     if (humanScore > computerScore) {
         console.log("You won! Congratulations!");
+        humanScoreDisplay.style.display = "block";
+        computerScoreDisplay.style.display = "block";
+        humanScoreDisplay.innerHTML = "You scored " + humanScore + ".";
+        computerScoreDisplay.innerHTML = "The computer scored " + computerScore + ".";
+        win.style.display = "block";
     } else if (computerScore > humanScore) {
         console.log("You lost. Better luck next time!");
+        humanScoreDisplay.style.display = "block";
+        computerScoreDisplay.style.display = "block";
+        humanScoreDisplay.innerHTML = "You scored " + humanScore + ".";
+        computerScoreDisplay.innerHTML = "The computer scored " + computerScore + ".";
+        lose.style.display = "block";
     } else if (computerScore === humanScore) {
         console.log("You tied with the computer! Up for a rematch?");
+        humanScoreDisplay.style.display = "block";
+        computerScoreDisplay.style.display = "block";
+        humanScoreDisplay.innerHTML = "You scored " + humanScore + ".";
+        computerScoreDisplay.innerHTML = "The computer scored " + computerScore + ".";
     }
 }
 
